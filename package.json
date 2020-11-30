@@ -1,0 +1,26 @@
+{
+  "name": "svg-saturation-filter-matrix",
+  "version": "1.0.0",
+  "description": "A function that generates saturation filter matrix for svg element feColorMatrix which simulates filter effect of photoshop.",
+  "main": "dist/index.js",
+  "module": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raunicorn/svg-saturation-filter-matrix.git"
+  },
+  "author": "raunicorn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raunicorn/svg-saturation-filter-matrix/issues"
+  },
+  "homepage": "https://github.com/raunicorn/svg-saturation-filter-matrix#readme",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^5.9.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
