@@ -4,6 +4,11 @@
   "description": "A function that generates saturation filter matrix for svg element feColorMatrix which simulates filter effect of photoshop.",
   "main": "dist/index.js",
   "module": "index.js",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "keywords": ["svg","filter","saturation","matrix"],
   "scripts": {
     "build": "webpack",
     "prepublishOnly": "npm run build"

@@ -1,14 +1,16 @@
-export default function svgHueFilterMatrix (hue) {
-  var hue = hue || 0
-  var degree = 1.8 * hue * Math.PI / 180
-  var cos = Math.cos(degree)
-  var sin = Math.sin(degree)
-  var lumR = 0.213
-  var lumG = 0.715
-  var lumB = 0.072
-  var matrix = `${lumR + cos * (1 - lumR) - sin * lumR} ${lumG - cos * lumG - sin * lumG} ${lumB - cos * lumB + sin * (1 - lumB)} 0 0
-  ${lumR - cos * lumR + sin * 0.143} ${lumG + cos * (1 - lumG) + sin * 0.140} ${lumB - cos * lumB - sin * 0.283} 0 0
-  ${lumR - cos * lumR + sin * (lumR - 1)} ${lumG - cos * lumG + sin * lumG} ${lumB + cos * (1 - lumB) + sin * lumB} 0 0
-  0 0 0 1 0`
+export default function svgHueFilterMatrix (s) {
+  s= s || 0
+  const lumR = 0.3086
+  const lumG = 0.6094
+  const lumB = 0.0820
+  s = s * 0.01 + 1
+  const sr = (1 - s) * lumR
+  const sg = (1 - s) * lumG
+  const sb = (1 - s) * lumB
+  const matrix =
+    `${sr + s} ${sg} ${sb} 0 0
+    ${sr} ${sg + s} ${sb} 0 0
+    ${sr} ${sg} ${sb + s} 0 0
+    0 0 0 1 0`
   return matrix
 }
